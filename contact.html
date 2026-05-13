@@ -39,7 +39,7 @@
             <div class="w-full md:w-1/2 p-4 md:p-12 text-gray-800">
                 <h2 class="text-2xl md:text-4xl font-bold mb-4 text-gray-900 tracking-tight">Contact us</h2>
                 
-                <form id="contactForm" class="space-y-2 md:space-y-4">
+                <form id="whatsappForm" class="space-y-2 md:space-y-4">
                     <div class="relative">
                         <input type="text" id="name" placeholder="Name" required
                             class="w-full px-3 py-2 bg-yellow-100/50 border-none rounded-xl focus:ring-2 focus:ring-[#816f31] outline-none transition-all text-sm">
@@ -84,32 +84,7 @@
         </div>
     </div>
 
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // Mencegah reload halaman
-
-            // Ambil data dari input field
-            const userName = document.getElementById('name').value;
-            const userEmail = document.getElementById('email').value;
-            const userMessage = document.getElementById('message').value;
-
-            // Alamat email tujuan (Ganti sesuai emailmu)
-            const myEmail = "reynaldodendy@gmail.com"; 
-
-            // Format Subjek
-            const subject = `Message from ${userName}`;
-
-            // Format Isi Pesan sesuai permintaanmu
-            // Halo saya (nama) trus ada email trus saya tertarik mengenai " pesan"
-            const emailBody = `Halo saya ${userName}, ini email saya ${userEmail}. Saya tertarik mengenai "${userMessage}"`;
-
-            // Buat Link Mailto dengan Encode agar karakter aman
-            const mailtoLink = `mailto:${myEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
-
-            // Buka aplikasi email
-            window.location.href = mailtoLink;
-        });
-    </script>
+    <script src="contact.js"></script>
 
 </body>
 
