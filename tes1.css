@@ -1,0 +1,149 @@
+/* style.css */
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: black;
+    overflow-x: hidden;
+}
+
+/* HERO */
+.hero {
+    background:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, .95)),
+        url("assets/container.png") no-repeat center center;
+    background-size: cover;
+    background-position: center top;
+    background-attachment: scroll;
+}
+
+/* PROFILE */
+.image-box {
+    position: relative;
+}
+
+.image-box::before {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    z-index: 3;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to top, #facc15, transparent);
+    filter: blur(40px);
+}
+
+.profile-img {
+    width: 450px;
+    position: relative;
+    z-index: 2;
+    border-radius: 20px;
+}
+
+/* EMAIL GLOW */
+.email-glow {
+    position: relative;
+}
+
+.email-glow::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(to top, #facc15, transparent);
+    filter: blur(10px);
+}
+
+/* ABOUT SECTION */
+
+
+/* SKILLS SECTION */
+.skills-section {
+    position: relative;
+}
+
+/* SKILL BOX */
+.skill-box {
+    background: linear-gradient(to bottom right, #111, #1f1f1f);
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 28px;
+    padding: 50px;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.header-gradient {
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.95),
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.4),
+            transparent);
+
+    padding-top: 10px;
+    padding-bottom: 60px;
+}
+
+/* DARK GRADIENT FOR BOTTOM DARKER */
+.dark-gradient {
+    background: linear-gradient(to bottom, #2a1d0d, #000000);
+}
+
+.cardShadow {
+  background-color: rgb(0, 0, 0, 0.5);
+}
+.coverflow {
+  width: 100vw;
+  height: 55vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px;
+  overflow: visible;
+}
+
+.coverflow-card {
+  position: absolute;
+  width: 30vw;
+  height: 50vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.5s ease, filter 0.5s ease;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+  object-fit: cover;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+/* ... simpan kode lamamu di atas ... */
+
+/* Tambahan untuk membuat gambar profil fleksibel */
+.profile-img {
+    width: 100%; /* Ubah dari 450px ke 100% agar mengikuti kontainer */
+    max-width: 450px; /* Batas maksimal tetap 450px di desktop */
+    height: auto;
+    position: relative;
+    z-index: 2;
+    border-radius: 20px;
+}
+
+/* Memastikan Hero tetap proporsional di HP */
+@media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll; /* Matikan fixed bg di mobile agar tidak berat */
+        background-position: center center;
+    }
+    
+    .skill-box {
+        padding: 30px 20px; /* Kecilkan padding box skill di HP */
+    }
+}
