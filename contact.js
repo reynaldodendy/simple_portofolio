@@ -1,4 +1,4 @@
-document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+document.getElementById('whatsappForm').addEventListener('submit', function (e) {
     e.preventDefault(); // Biar gak reload
 
     // Ambil data
@@ -18,3 +18,14 @@ document.getElementById('whatsappForm').addEventListener('submit', function(e) {
     const waLink = `https://wa.me/${phoneNumber}?text=${encodedText}`;
     window.open(waLink, '_blank'); // Buka di tab baru
 });
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbw8t0IJBcOVkuNtK_Fhya0FQtGutE1bkw2RM9jD7LGaR0dORZ1tQLU0EH37xTatR4PI/exec'
+const form = document.forms['whatsappForm']
+
+form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => response.json())
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+})
