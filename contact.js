@@ -7,7 +7,7 @@ document.getElementById('whatsappForm').addEventListener('submit', function (e) 
     const msg = document.getElementById('message').value;
 
     // NOMOR WHATSAPP (Gunakan kode negara tanpa +, misal 62896...)
-    const phoneNumber = "6289675619870"; 
+    const phoneNumber = "6289675619870";
 
     // Format Pesan (Encode URI buat handle spasi & enter)
     // Halo saya (nama), email saya (email). Saya tertarik mengenai "(pesan)"
